@@ -11,7 +11,7 @@ export class BannerService {
     // var num = this.http.get("http://localhost:7750/getdata")
     // console.log(num);
     console.log("11111")
-    // this.http.get("http://localhost:7750/getdata");
+    this.http.get("http://localhost:7750/getdata");
     return this.http.get("http://localhost:7750/getdata").map(res=>res.json())
       
   } 
