@@ -7,12 +7,13 @@ export class BannerService {
 
   constructor(private http:Http) { }
 
-  getBanner(){
+  getBanner():Observable<any>{
     // var num = this.http.get("http://localhost:7750/getdata")
     // console.log(num);
-    console.log("11111")
-    this.http.get("http://localhost:7750/getdata");
-    return this.http.get("http://localhost:7750/getdata").map(res=>res.json())
+    // console.log("11111")
+    // var num = this.http.get("http://localhost:7750/getbannerleft").map(res=>res.json());
+    // console.log(num);
+    return this.http.get("http://localhost:7750/getbannerleft").map(res=>res.json())
       
   } 
 

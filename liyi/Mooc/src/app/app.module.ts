@@ -8,6 +8,7 @@ import { MainComponent } from './main/main.component';
 import { HeadComponent } from './head/head.component';
 import { BannerComponent } from './banner/banner.component';
 import { HttpModule } from '@angular/http';
+import { TuijianComponent } from './tuijian/tuijian.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { HttpModule } from '@angular/http';
     MainComponent,
     HeadComponent,
     BannerComponent,
+    TuijianComponent,
     
   ],
   imports: [

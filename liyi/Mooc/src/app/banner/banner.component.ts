@@ -12,8 +12,10 @@ import { BannerService, Banner } from '../service/banner.service';
 })
 export class BannerComponent implements OnInit {
   // private bannerleft:string []
-  bannerleft:Banner
-  private banner:Banner
+  bannerleft:any;
+  private banner:any = [];
+  localFlag:boolean;
+  localVal:string;
   private bannerdata = [
     {"picurl":"../../assets/img/banner1.jpg"},
     {"picurl":"../../assets/img/banner2.jpg"},
@@ -24,9 +26,43 @@ export class BannerComponent implements OnInit {
 
   ngOnInit() {
     
-     this.bannerService.getBanner().subscribe( bannerleft => {this.bannerleft = bannerleft;
-      console.log(bannerleft)})
-    // console.log(this.bannerleft)
+     this.bannerService.getBanner()
+        .subscribe( bannerleft => {
+          this.bannerleft = bannerleft[0].result
+          // console.log(bannerleft[0].result)
+          // console.log(this.bannerleft);
+        },function(){
+          console.log("111")
+          this.bannerleft.map(function(item){
+            this.banner.push({name:"item.name",icon:"item.mobIcon"});
+          })
+          // console.log(this.banner);
+        })
+
+        if(localStorage.getItem("username")){
+          this.localFlag = true;
+          this.localVal = localStorage.getItem("username");
+          console.log(this.localFlag);
+        }else{
+          this.localFlag = false;
+          // console.log(this.localFlag);
+        }
+      
+        
+        
+        // eval("helloworld(name)");  
+       
+
+
+      
+    // this.bannerleft.map(function(item){
+    //   this.banner.push({name:"item.name",icon:"item.mobIcon"})
+    // })
+
+    // console.log(this.banner);
+      
   }
+
+  
 
 }

@@ -25,7 +25,35 @@
       <span class="sr-only">Next</span>
     </a>
 
-    <div></div>
+    <div class="bannerleft">
+        <div *ngFor = "let item of bannerleft" class="bannerLeftItem">
+           <a href="##">
+             <div><img [src]="item.mobIcon" alt=""></div>
+             <div>{{item.name}}</div>
+           </a>
+        </div>
+    </div>
+
+    <div class="bannerright">
+        <div *ngIf="!localFlag" class="bannerRightLocal1 bannerRightLocal">
+            <h3>免费学习名校名师的精品课程</h3>
+            <div>
+                <img src="../../assets/img/1.jpg" alt="">
+            </div>
+            <button>登录</button>
+            <p>网易和高等教育出版社出版</p>
+        </div>
+        <div *ngIf="localFlag" class="bannerRightLocal2 bannerRightLocal">
+            <div>
+                <img src="../../assets/img/1.jpg" alt="">
+            </div>
+           
+            <h3>{{localVal}}</h3>
+            <p>还没有课程</p>
+            <button>我的课程</button>
+            
+        </div>
+    </div>
 
   </div>
 </div>
